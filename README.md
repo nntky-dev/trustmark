@@ -1,29 +1,66 @@
-1,Read Me
-# TrustMark v0
+# TrustMark
 
-TrustMark is a prototype system for recording authorship claims of AI-generated content.
 
-This project does NOT prevent misuse or copying.
-It simply records who claimed authorship and when, and allows later verification.
 
-## What it does
-- Records the creator name and timestamp for a given text
-- Allows verification of identical content later
-- Works as a local CLI tool and as a Web API
+TrustMark is a minimal API that helps creators claim authorship of AI-generated or digital content by recording *who* claimed *what* and *when*.
 
-## What it does NOT do
-- Does not prevent unauthorized reuse or screenshots
-- Does not guarantee legal ownership
-- Does not take responsibility for data loss
+
+
+This project is an early prototype designed to explore the idea of embedding "credit and trust" into generated content.
+
+
+
+---
+
+
+
+## What TrustMark Does
+
+
+
+- Registers a claim for a piece of content (hashed)
+
+- Records the author name and timestamp
+
+- Verifies whether the same content has been claimed before
+
+- Exposes a simple REST API for registration and verification
+
+
+
+---
+
+
+
+## What TrustMark Does NOT Do
+
+
+
+- It does **not** prevent copying or screenshots
+
+- It does **not** provide legal ownership or copyright enforcement
+
+- It only supports *claim verification*, not *protection*
+
+
+
+TrustMark is intended as a **deterrent and proof-assist tool**, not a security system.
+
+
+
+---
+
+
 
 ## API Endpoints
 
-### POST /register
-Registers a text with a creator name.
 
-### POST /verify
-Verifies whether the same text has been registered before.
 
-## Status
-This is an early prototype (v0) under active development.
+### Health Check
+
+
+
+```http
+
+GET /health
 
