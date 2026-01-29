@@ -64,3 +64,35 @@ TrustMark is intended as a **deterrent and proof-assist tool**, not a security s
 
 GET /health
 
+## Architecture (Prototype)
+
+
+
+This prototype uses a simple architecture focused on traceability rather than scalability.
+
+
+
+- Client sends requests to FastAPI endpoints (`/register`, `/verify`)
+
+- FastAPI runs inside a Docker container
+
+- The container is deployed on AWS Lightsail
+
+- Data is stored locally as `db.json` inside the container filesystem
+
+
+
+This design makes it easy to understand where data is stored and how verification works.
+
+
+
+### Future Ideas (Not Implemented)
+
+
+
+- Replace Lightsail with ECS or AWS Lambda
+
+- Replace `db.json` with DynamoDB
+
+- Add authentication and access control
+
